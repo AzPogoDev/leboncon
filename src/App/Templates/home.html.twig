@@ -4,11 +4,11 @@
 {% block body %}
 
     <div class="home">
-        {% if couser %}
+        {# {% if couser %}
             <div class="hero__header">
                 <h2><h3>Bonjour {{ couser }} !</h3></h2>
             </div>
-        {% endif %}
+        {% endif %} #}
         <div class="hero__header">
             <div class="input-group">
                 <div class="form-outline w-100">
@@ -69,7 +69,7 @@
 
         <div class="row">
             <div class="col-md-9 " id="ourHolder">
-                {% for ad in annonces %}
+                {# {% for ad in annonces %}
 
                     <a href="/annonce?id={{ ad.id }}"
                        class="item {{ ad.category[0].name }} {{ ad.category[1].name }} {{ ad.category[2].name }}"
@@ -92,7 +92,7 @@
                             </div>
                         </div>
                     </a>
-                {% endfor %}
+                {% endfor %} #}
 
             </div>
             <div class="col-md-3">
