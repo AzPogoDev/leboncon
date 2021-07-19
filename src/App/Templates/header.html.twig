@@ -6,13 +6,13 @@
                     <img class="imgnav" src="https://upload.wikimedia.org/wikipedia/fr/b/b3/Leboncoin.fr_Logo.PNG"
                          alt="">
                 </a>
-                {% if  request.session.get('user') %}
+                {# {% if  request.session.get('user') %}
                     <a href="/new-annonce" class="btn btn-primary">
                         <i class="far fa-plus-square"></i>
                         Déposer une annonce {{ request.session.get('user').nickname }}
 
                     </a>
-                {% endif %}
+                {% endif %} #}
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
                                 Messages
                             </div>
                         </li>
-
+{# 
                         {% if not request.session.get('user') %}
 
 
@@ -61,7 +61,7 @@
                             </li>
 
 
-                        {% endif %}
+                        {% endif %} #}
                     </ul>
                 </div>
             </div>
