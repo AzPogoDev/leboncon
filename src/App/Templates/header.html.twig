@@ -1,0 +1,70 @@
+<div class="p-3 text-white">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg static-top customnav">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img class="imgnav" src="https://upload.wikimedia.org/wikipedia/fr/b/b3/Leboncoin.fr_Logo.PNG"
+                         alt="">
+                </a>
+                {% if  request.session.get('user') %}
+                    <a href="/new-annonce" class="btn btn-primary">
+                        <i class="far fa-plus-square"></i>
+                        Déposer une annonce {{ request.session.get('user').nickname }}
+
+                    </a>
+                {% endif %}
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="icon">
+                            <div class="top">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="bottom">
+
+                                Favoris
+                            </div>
+                        </li>
+                        <li class="icon">
+                            <div class="top">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div class="bottom">
+
+                                Messages
+                            </div>
+                        </li>
+
+                        {% if not request.session.get('user') %}
+
+
+                            <li class="nav-item a">
+                                <a class="nav-link" href="/sign-in"><i class="fas fa-user"
+                                                                       style="font-size: 1.5rem;"></i>Se connceter</a>
+                            </li>
+
+
+                            <li class="nav-item a">
+                                <a class="nav-link" href="/sign-up"><i class="fas fa-user"
+                                                                       style="font-size: 1.5rem;"></i>S'inscrire</a>
+                            </li>
+
+
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/disconnect"><i class="fas fa-sign-out-alt"></i></a>
+                            </li>
+
+
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

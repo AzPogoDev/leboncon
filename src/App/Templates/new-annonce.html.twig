@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="card card-outline-secondary">
+        <div class="card-header">
+            <h3 class="mb-0">Annonce Information</h3>
+        </div>
+        <div class="card-body">
+            <form method="post" class="form" role="form">
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Title</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" name="adTitle">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Price</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" name="adPrice">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Place</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" name="adPlace">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Content</label>
+                    <div class="col-lg-9">
+                        <textarea class="form-control" name="adContent"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Img 1</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" name="img[]">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Img 2</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" name="img[]">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Img 3</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" name="img[]">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Category</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" name="adCat[]">
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Category 2</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" name="adCat[]">
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Category 3</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" name="adCat[]">
+                    </div>
+                </div>
+
+
+                <div class="form-group row my-3">
+                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                    <div class="col-lg-9">
+                        <input class="btn btn-secondary" type="reset" value="Cancel">
+                        <input class="btn btn-primary" type="submit" name="addPost" value="Save Changes">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><!-- /form user info -->
+
+{% endblock %}

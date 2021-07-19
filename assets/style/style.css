@@ -1,0 +1,148 @@
+body {
+    font-family: Open Sans, sans-serif, Arial !important;
+}
+
+.latest__post .card {
+    width: 30%;
+}
+
+.latest__post .latest__post__loop {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+header {
+    background: #fff;
+}
+
+a.text-secondary {
+    color: #bdc3c7 !important;
+}
+
+.imgnav {
+    width: 250px;
+}
+
+.customnav {
+    background: #fff;
+    box-shadow: 0 -1px 4px 0 rgba(26, 26, 26, .08), 0 4px 8px 0 rgba(26, 26, 26, .12);
+}
+
+.btn-primary {
+    background: #ff6e14 !important;
+    border: #ff6e14 !important;
+}
+
+.nav-link {
+    color: black;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    justify-content: flex-end !important;
+}
+
+.icon .far, .fas {
+    color: black;
+    font-size: 1.25rem;
+}
+
+.icon {
+    color: black;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.hero__header {
+    box-shadow: 0 -1px 4px 0 rgba(26, 26, 26, .08), 0 4px 8px 0 rgba(26, 26, 26, .12);
+    padding: 1rem;
+    margin: 4rem 0;
+}
+
+.filter__section label {
+    font-weight: bold;
+}
+
+.card {
+    flex-direction: row;
+    margin: 2rem 0;
+    border-radius: 20px;
+}
+
+.card-img, .card-img-bottom, .card-img-top {
+    border-radius: 20px 0px 0px 20px;
+    width: 100%;
+    width: 300px !important;
+
+}
+
+.card.card-custom {
+    flex-direction: column;
+    border-radius: 15px;
+
+}
+
+.card.card-custom .card-img-top {
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-text {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black !important;
+}
+
+a:hover .card {
+    box-shadow: 0 -1px 4px 0 rgba(26, 26, 26, .08), 0 4px 8px 0 rgba(26, 26, 26, .12);
+    transform: scale(1.1);
+    z-index: 99999;
+}
+
+header a {
+    color: white !important;
+}
+
+.all__images img {
+    width: 100%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+#filters li {
+    display: inline;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#filters a {
+    color: red;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.nav-item.a a {
+    color: black !important;
+}

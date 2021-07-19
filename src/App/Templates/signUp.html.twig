@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un compte / Raph'z Developer{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                <form method="POST" action="/sign-up">
+                    <div class="mb-3">
+                        <label for="signUpForm_nickName" class="form-label">Nom d'affichage</label>
+                        <input type="text" class="form-control{% if signUpFormErrors.nickName is defined %} is-invalid{% endif %}" id="signUpForm_nickName" name="signUpForm[nickName]" value="{% if signUpForm.nickName is defined %}{{ signUpForm.nickName }}{% endif %}" required>
+                        {% if signUpFormErrors.nickName is defined %}
+                            <div class="invalid-feedback">{{ signUpFormErrors.nickName }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <label for="signUpForm_emailAddress" class="form-label">Adresse e-mail</label>
+                        <input type="email" class="form-control{% if signUpFormErrors.emailAddress is defined %} is-invalid{% endif %}" id="signUpForm_emailAddress" name="signUpForm[emailAddress]" value="{% if signUpForm.emailAddress is defined %}{{ signUpForm.emailAddress }}{% endif %}" required>
+                        {% if signUpFormErrors.emailAddress is defined %}
+                            <div class="invalid-feedback">{{ signUpFormErrors.emailAddress }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <label for="signUpForm_plainPassword" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control{% if signUpFormErrors.plainPassword is defined %} is-invalid{% endif %}" id="signUpForm_plainPassword" name="signUpForm[plainPassword]" required>
+                        {% if signUpFormErrors.plainPassword is defined %}
+                            <div class="invalid-feedback">{{ signUpFormErrors.plainPassword }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <label for="signUpForm_plainPasswordRepeat" class="form-label">Répéter le mot de passe</label>
+                        <input type="password" class="form-control{% if signUpFormErrors.plainPasswordRepeat is defined %} is-invalid{% endif %}" id="signUpForm_plainPasswordRepeat" name="signUpForm[plainPasswordRepeat]" required>
+                        {% if signUpFormErrors.plainPasswordRepeat is defined %}
+                            <div class="invalid-feedback">{{ signUpFormErrors.plainPasswordRepeat }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Créer un compte</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

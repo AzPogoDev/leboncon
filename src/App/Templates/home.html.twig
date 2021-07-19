@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <div class="home">
+        {% if couser %}
+            <div class="hero__header">
+                <h2><h3>Bonjour {{ couser }} !</h3></h2>
+            </div>
+        {% endif %}
+        <div class="hero__header">
+            <div class="input-group">
+                <div class="form-outline w-100">
+                    <h2>Rechercher un article ?</h2>
+
+                    <input data-search type="search" class="form-control"/>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="filter__section d-flex justify-content-center" id="filters">
+
+            <script>
+
+                $(document).ready(function () {
+                    $(
+                        '#filterOptions li a').click(function () {
+
+                        // fetch the class of the clicked item
+                        var ourClass = $(this).attr('class');
+
+                        // reset the active class on all the buttons
+                        $('#filterOptions li').removeClass('active');
+
+                        // update the active state on our clicked button
+                        $(this).parent().addClass('active');
+
+
+                        if (ourClass == 'all') {
+                            // show all our items
+                            $('#ourHolder').children('a.item').show();
+
+                        } else {
+
+                            // hide all elements that don't share ourClass
+                            $('#ourHolder').children('a:not(.' + ourClass + ')').hide();
+
+                            // show all elements that do share ourClass
+                            $('#ourHolder').children('a.' + ourClass).show();
+                        }
+                        return false;
+                    });
+                });
+            </script>
+            <div class="hero__header w-100 d-flex justify-content-center flex-column align-items-center">
+                <h2>Filtrer mes articles</h2>
+                <ul id="filterOptions">
+                    <li class="active"><a href="#" class="all">All</a></li>
+                    <li><a href="#" class="Nourriture">Nourriture</a></li>
+                    <li><a href="#" class="objet">Objet</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-9 " id="ourHolder">
+                {% for ad in annonces %}
+
+                    <a href="/annonce?id={{ ad.id }}"
+                       class="item {{ ad.category[0].name }} {{ ad.category[1].name }} {{ ad.category[2].name }}"
+                       data-filter-item data-filter-name="{{ ad.title }}">
+
+                        <div class="card  "
+                             style="width: 100%;">
+                            <img src="{{ ad.images[0].url }}"
+                                 class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ ad.title }}</h5>
+                                <h5 class="card-title">{{ ad.price }} €</h5>
+                                <h6 class="h5 card-title">Catégorie : </h6>
+                                {% for catk in ad.category %}
+                                    <p> -> {{ catk.name }}</p>
+                                {% endfor %}
+
+                                <p class="card-text">{{ ad.place }}</p>
+                                <p class="card-text">{{ ad.content }}</p>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+
+            </div>
+            <div class="col-md-3">
+                <div class="card card-custom " style="width: 100%;">
+                    <img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/6d/37/1d/6d371d576b6ef9694d7a60db1b0d2df9271b9876.jpg?rule=ad-image"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Annonce</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        $('[data-search]').on('keyup', function () {
+            var searchVal = $(this).val();
+            var filterItems = $('[data-filter-item]');
+
+            if (searchVal != '') {
+
+                filterItems.addClass('hidden');
+                $('[data-filter-item][data-filter-name*="' + searchVal + '"]').removeClass('hidden');
+            } else {
+                filterItems.removeClass('hidden');
+            }
+        });
+    </script>
+{% endblock %}
