@@ -40,7 +40,7 @@ class AwareManager
     {
         if ($object instanceof PdoAware) {
             if (!$this->pdo) {
-                $this->pdo = new PDO('postgres://sdfesvnqsrvuct:570c0d8089b6eba4b318b124ef30d1b5c7f20e38eaa4ff3211903371fa25e4e5@ec2-54-217-195-234.eu-west-1.compute.amazonaws.com:5432/d4p9o9uhhjkbfb');
+                $this->pdo = new PDO('postgres://hwpsldeappbnge:9c7e3896a57f438616d1d75db9bcede7d30c8f830bb0f80b0376118ed38807d9@ec2-54-155-87-214.eu-west-1.compute.amazonaws.com:5432/ds4d1s31itdhs');
             }
 
             $object->setPdo($this->pdo);
@@ -50,13 +50,13 @@ class AwareManager
             $object->setRequest($this->request);
         }
 
-        // if ($object instanceof PostRepositoryAware) {
-        //     if (!$this->postrepository) {
-        //         $this->postrepository = new PostRepository();
-        //         $this->manage($this->postrepository);
-        //     }
-        //     $object->setPostRepository($this->postrepository);
-        // }
+        if ($object instanceof PostRepositoryAware) {
+            if (!$this->postrepository) {
+                $this->postrepository = new PostRepository();
+                $this->manage($this->postrepository);
+            }
+            $object->setPostRepository($this->postrepository);
+        }
 
         if ($object instanceof ImageRepositoryAware) {
             if (!$this->imagerepository) {

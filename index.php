@@ -18,8 +18,8 @@ if (isset($routes[$request->getPathInfo()])) {
 
     $controller = new $controllerClassName();
 
-    // // $awareManager = new AwareManager($request);
-    // $awareManager->manage($controller);
+    $awareManager = new AwareManager($request);
+    $awareManager->manage($controller);
 
     $response = $controller->{$controllerMethodName}();
 } else {
