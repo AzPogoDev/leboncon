@@ -1,16 +1,16 @@
 <?php
 
 
-// namespace App\Aware;
+namespace App\Aware;
 
-// use PDO;
+use PDO;
 
-// trait PdoAwareTrait
-// {
-//     private ?PDO $pdo = null;
+trait PdoAwareTrait
+{
+    private ?PDO $pdo = null;
 
-//     public function setPdo(PDO $pdo)
-//     {
-//         $this->pdo = $pdo;
-//     }
-// }
+    public function setPdo(PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
+}

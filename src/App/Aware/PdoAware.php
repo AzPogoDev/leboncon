@@ -1,10 +1,10 @@
 <?php
 
-// namespace App\Aware;
+namespace App\Aware;
 
-// use PDO;
+use PDO;
 
-// interface PdoAware
-// {
-//     public function setPdo(PDO $pdo);
-// }
+interface PdoAware
+{
+    public function setPdo(PDO $pdo);
+}
