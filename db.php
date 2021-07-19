@@ -11,7 +11,7 @@ $pdo = new PDO("pgsql:" . sprintf(
     ltrim($db["path"], "/")
 ));
 
-$sql = file_get_contents('./dump.sql');
+$sql = file_get_contents('./leboncon.sql');
 
 $query = $pdo->query($sql);
 
