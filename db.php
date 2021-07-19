@@ -13,6 +13,4 @@ $pdo = new PDO("pgsql:" . sprintf(
 
 $sql = file_get_contents('./leboncon.sql');
 
-$query = $pdo->query($sql);
-
-var_dump($query->execute());
+var_dump($query->execute($sql));
