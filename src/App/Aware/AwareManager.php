@@ -50,13 +50,13 @@ class AwareManager
             $object->setRequest($this->request);
         }
 
-        if ($object instanceof PostRepositoryAware) {
-            if (!$this->postrepository) {
-                $this->postrepository = new PostRepository();
-                $this->manage($this->postrepository);
-            }
-            $object->setPostRepository($this->postrepository);
-        }
+        // if ($object instanceof PostRepositoryAware) {
+        //     if (!$this->postrepository) {
+        //         $this->postrepository = new PostRepository();
+        //         $this->manage($this->postrepository);
+        //     }
+        //     $object->setPostRepository($this->postrepository);
+        // }
 
         if ($object instanceof ImageRepositoryAware) {
             if (!$this->imagerepository) {
